@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useQuery, gql } from "@apollo/client";
+
+const FETCH_USERS = gql`
+  query {
+    users {
+      id
+      name
+      age
+    }
+  }
+`;
+
+interface User {
+  id: string;
+  name: string;
+  age: number;
+}
 
 function App() {
+  const { data: { users = [] } = {} } = useQuery(FETCH_USERS);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {users.map((user: User) => (
+        <div key={user.id}>{user.name}({user.age})</div>
+      ))}
     </div>
-  );
+  )
 }
 
 export default App;
