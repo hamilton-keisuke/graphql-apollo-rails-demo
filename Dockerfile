@@ -24,5 +24,13 @@ COPY . /app
 RUN yarn install --check-files
 RUN yarn global add create-react-app
 
+# for frontend
+RUN cd frontend && yarn install
+
+# ENTRYPOINT ["./docker-entrypoint.sh"]
+
 EXPOSE 3000
 EXPOSE 3001
+
+# # Start the main process.
+# CMD ["rails", "s", "-b", "0.0.0.0"]
