@@ -1,24 +1,56 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is sample project for Rails, Graphql, ApolloClient.
 
-Things you may want to cover:
+# How to work
 
-* Ruby version
+start container
+```
+$ make build
+$ make up
+```
 
-* System dependencies
+work Rails
+```
+$ make bash
+# bin/rails s -b 0.0.0.0
+```
 
-* Configuration
+work Frontend(apollo client)
+```
+$ make bash
+# cd frontend
+# yarn start
+```
 
-* Database creation
+# sample query
 
-* Database initialization
+* query
+```
+query {
+  users {
+    name
+    age
+    books {
+      title
+    }
+  }
+}
+```
 
-* How to run the test suite
+* mutation
+```
+mutation {
+    createUser(input: { name: "Hoge", age: 32}) {
+    user {
+      id
+      name
+    }
+  }
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+# cf
 
-* Deployment instructions
-
-* ...
+* https://qiita.com/soutaschool/items/2f65d9bec3753d48bbc0
+* https://zenn.dev/lilac/books/37bdf5d90b5f9b/viewer/e22e29
