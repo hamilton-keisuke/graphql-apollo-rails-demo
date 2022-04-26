@@ -7,17 +7,17 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
+  HttpLink,
 } from "@apollo/client";
+import { createPersistedQueryLink } from "@apollo/client/link/persisted-queries";
+import { sha256 } from 'crypto-hash';
 
-const link = createHttpLink({
-  uri: "http://localhost:3000/graphql",
-  credentials: "include",
-});
+const httpLink = new HttpLink({ uri: "http://localhost:3000/graphql" });
+const persistedQueriesLink = createPersistedQueryLink({ sha256 });
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: link,
+  link: persistedQueriesLink.concat(httpLink),
 });
 
 const root = ReactDOM.createRoot(
