@@ -25,7 +25,7 @@ $ make bash
 
 # sample query
 
-* query
+## query
 ```
 query {
   users {
@@ -38,7 +38,10 @@ query {
 }
 ```
 
-* mutation
+## mutation
+
+### createUser
+
 ```
 mutation {
     createUser(input: { name: "Hoge", age: 32}) {
@@ -50,6 +53,30 @@ mutation {
 }
 ```
 
+### updateUser
+
+```
+mutation {
+  updateUser(input: {id:"10", name:"Suzuki Ichiro", age: 44 }) {
+    user {
+      id
+      name
+      age
+    }
+  }
+}
+
+```
+
+### deleteUser
+
+```
+mutation {
+  deleteUser(input: {id: "11"}) {
+    id
+  }
+}
+```
 # cf
 
 * https://qiita.com/soutaschool/items/2f65d9bec3753d48bbc0
