@@ -13,6 +13,8 @@ $ make up
 work Rails
 ```
 $ make bash
+# rails db:prepare
+# rails db:seed
 # bin/rails s -b 0.0.0.0
 ```
 
@@ -23,6 +25,7 @@ $ make bash
 # yarn start
 ```
 
+If Rails and Frontend started, you can show graphql the users list in 'http://localhost:3001'. This is based on users query result.
 # sample query
 
 ## query
