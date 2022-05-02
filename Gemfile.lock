@@ -80,6 +80,10 @@ GEM
       i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    graphdoc-ruby (0.1.0)
+      activesupport (>= 4.2.0)
+      bundler
+      rack
     graphql (2.0.7)
     graphql-batch (0.5.1)
       graphql (>= 1.10, < 3)
@@ -174,6 +178,7 @@ DEPENDENCIES
   bootsnap
   debug
   faker
+  graphdoc-ruby
   graphql
   graphql-batch
   graphql-persisted_queries

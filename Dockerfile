@@ -22,7 +22,8 @@ RUN bundle install
 COPY . /app
 
 RUN yarn install --check-files
-RUN yarn global add create-react-app
+RUN yarn global add create-react-app && \
+    yarn global add @2fd/graphdoc
 
 # for frontend
 RUN cd frontend && yarn install
