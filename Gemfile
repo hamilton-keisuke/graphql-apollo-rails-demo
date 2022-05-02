@@ -38,6 +38,7 @@ gem "rack-cors"
 
 gem "graphql"
 gem "graphql-persisted_queries"
+gem "graphql-batch"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

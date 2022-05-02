@@ -2,6 +2,7 @@ class AppSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
+  use GraphQL::Batch
   use GraphQL::PersistedQueries
 
   # For batch-loading (see https://graphql-ruby.org/dataloader/overview.html)
